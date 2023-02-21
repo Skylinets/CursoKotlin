@@ -10,8 +10,15 @@ fun main() {
 
     val greetings = arrayOf("Hola", "Hi", "Bienvenido", "Buenos días", "Hallo")
 
-    val introductions = arrayOf("Mi nombre es", "Puedes llamarme", "Usualmente me llaman", "Yo soy")
-    val nombres = arrayOf("John", "Hansen", "Johny")
+    val introductions = arrayOf("mi nombre es", "puedes llamarme", "usualmente me llaman", "yo soy")
+    val names = arrayOf("John", "Hansen", "Johny")
 
+    val randIndexGreeting = (Math.random() * greetings.size).toInt()
+    val randIndexIntroduction = (Math.random() * introductions.size).toInt()
+    val randIndexNames = (Math.random() * names.size).toInt()
+
+
+    val phrase = "${greetings[randIndexGreeting]} ${introductions[randIndexIntroduction]} ${names[randIndexNames]}"
+    println(phrase)
 
 }
