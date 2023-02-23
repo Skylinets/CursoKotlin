@@ -2,10 +2,10 @@ package com.example.cursoesencialdekotlin.simulacion
 
 fun main() {
 
-    val isLoggedIn = true
+    var isLoggedIn = false
     val verificar = arrayOf("John","1234")
     var respuesta = false
-    var i=0
+    var i=3
     do {
         print("Ingrese Usuario :")
         val user = readLine()
@@ -19,11 +19,18 @@ fun main() {
         }
         if(respuesta){
             print("Bienvenido $user")
+            isLoggedIn = true
         }else{
-            println("Usuario o contraseña incorrecta")
+            i--
+            println("Usuario o contraseña incorrecta \n te quedan ($i) intentos")
         }
-        i++
-    }while (isLoggedIn && verificar.size <= i)
+        if(i==0){
+            println("Se te acabaron los intentos, contactese con el administrador")
+            i=-1
+        }
+    }while (i > 0 && !isLoggedIn)
+
+
 
 
 
